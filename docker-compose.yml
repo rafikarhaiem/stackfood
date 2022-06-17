@@ -31,9 +31,9 @@ services:
       - ./setup_mysql/code1:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: user
-      MYSQL_PASSWORD: user
-      MYSQL_DATABASE: bfcf_db
+      MYSQL_USER: mysqluser
+      MYSQL_PASSWORD: mysqlpass
+      MYSQL_DATABASE: mysqldb
     ports:
       - "3307:3306"
     networks:
@@ -50,9 +50,9 @@ services:
       - bitfalcon_network
     container_name: back
     environment:
-      MYSQL_USER: user
-      MYSQL_PASSWORD: user
-      MYSQL_DATABASE: bfcf_db
+      MYSQL_USER: mysqluser
+      MYSQL_PASSWORD: mysqlpass
+      MYSQL_DATABASE: mysqldb
   api:
      build:
        context: ./docker/code2
